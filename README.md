@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Placement Tracker
 
 A private dashboard (works on your phone) that reads your college placement mails from Gmail and tells you:
@@ -109,3 +110,6 @@ npm run selftest             # offline test of parsing/matching/status logic wit
 - `lib/resume.ts` – TF-IDF ranking · `lib/match.ts` – SRN/name finder · `lib/parse.ts` – template parsing
 - `lib/sync.ts`, `lib/gmail.ts` – incremental Gmail sync (time-boxed for Vercel's 60 s limit)
 - `app/` – dashboard, settings page, API routes
+=======
+# Placement-Tracker
+>>>>>>> 67b2a8d7689640625623d2d6dafbe2f26f8f7500
