@@ -47,6 +47,12 @@ export function checkEligibility(d: ParsedDrive, s: Settings) {
     const ok = higherIsBetter ? mine >= req : mine <= req;
     if (!ok) { bad = true; reasons.push(`${label}: need ${higherIsBetter ? "≥" : "≤"}${req}, you have ${mine}`); }
   };
+    // Full-time-only filter: any drive whose type/role/event mentions an internship is out
+  if (s.fullTimeOnly && /intern/i.test(`${d.type} ${d.role} ${d.event}`)) {
+    known = true;
+    bad = true;
+    reasons.push(`Not full-time only: ${d.type || "internship"}`);
+  }
   chk("10th", e.tenth, s.tenth);
   chk("12th", e.twelfth, s.twelfth);
   chk("UG CGPA", e.ug, s.cgpa);

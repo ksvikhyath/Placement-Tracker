@@ -24,6 +24,7 @@ export async function PUT(req: Request) {
     branch: String(b.branch ?? cur.branch).trim().toLowerCase(),
     senders: String(b.senders ?? cur.senders).trim(),
     label: String(b.label ?? cur.label).trim(),
+        fullTimeOnly: typeof b.fullTimeOnly === "boolean" ? b.fullTimeOnly : cur.fullTimeOnly,
   };
   await redis().set("settings", next);
   return NextResponse.json(next);

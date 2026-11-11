@@ -8,6 +8,7 @@ export type Settings = {
   branch: string;
   senders: string; // comma separated sender addresses
   label: string; // optional Gmail label
+  fullTimeOnly: boolean
 };
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -20,6 +21,7 @@ export const DEFAULT_SETTINGS: Settings = {
   branch: "cse",
   senders: "placementsupport@pes.edu",
   label: "",
+  fullTimeOnly: true,
 };
 
 export type Eligibility = {
